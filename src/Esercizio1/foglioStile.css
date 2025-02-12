@@ -1,0 +1,64 @@
+/* margin di default 8px da strumenti per sviluppatori*/
+body{
+    margin: auto;
+}
+
+/* Problema di visualizzazione del titolo header h1*/
+header h1
+{
+    margin: auto;
+}
+
+
+header {
+    background-color: blue; 
+    color: white;
+    text-align: center;   
+}
+
+form 
+{
+    margin-left: 15px;
+}
+
+nav {
+    background-color: rgb(0, 238, 255);
+    color: black;
+}
+
+nav ul
+{
+    display:inline-flex;
+    list-style-type: none;
+}
+
+nav li
+{
+    padding: 3px;
+}
+
+nav a:hover
+{
+    text-decoration:red underline !important;
+}
+
+nav a:visited
+{
+    background-color: black !important;
+}
+
+nav a:active
+{
+    background-color: blue !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer {
+    padding: 20px;
+    background-color: blue;
+    font-size: 0.7em;
+    color: white;
+}

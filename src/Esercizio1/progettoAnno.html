@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS impostazioni per la tabella Foglio di stile incorporato --> 
+    <link rel="stylesheet" href="foglioStile.css">
+    <title>Registrazione sito Scout</title>
+
+    <style type="text/css">
+        table, th, td {
+            padding: 1em;
+            width: fit-content;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        #titolo 
+        {
+            text-align: center;
+            text-decoration-line: overline underline;
+            text-decoration-color:blue;
+        }
+
+        .smot 
+        {
+         background-color: gold;
+        }
+
+        .ser
+        {
+            background-color: cornflowerblue;
+        }
+        
+        .ing
+        {
+            background-color: brown;
+        }
+
+        .inf
+        {
+            background-color: aqua;
+        }
+
+        .itst
+        {
+            background-color:darkseagreen ;
+        }
+
+        .tp
+        {
+            background-color: chartreuse;
+        }
+
+        .gpoi
+        {
+            background-color: coral;
+        }
+
+        .ia
+        {
+            background-color: pink;
+        }
+
+        .mat
+        {
+            background-color:skyblue;
+        }
+
+        .chiesa
+        {
+            background-color: springgreen;
+        }
+
+        img { 
+            width: 77%;
+            height: 77%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header style = "background-color: blue;">
+        <h1>IIS MARCONI PIERALISI</h1>
+        <nav>
+  <!-- 5. Elenco puntato: elenco delle materie curriculari -->
+  <ul>
+     <li><a href="informatica.html">Informatica</a></li>
+     <li><a href="">Sistemi e rete</a></li>
+     <li><a href="">Tpsit</a></li>
+     <li><a href="">Italiano</a></li>
+     <li><a href="">Matematica</a></li>
+     <li><a href="">Inglese</a></li>
+     <li><a href="">Scienze Motorie</a></li>
+     <li><a href="">Storia</a></li>
+     <li><a href="">GPOI</a></li>
+     <li><a href="">Religione</a></li>
+     <li><a href="progettoAnno.html">Progetto dell'anno</a></li>
+   </ul>
+        </nav>
+     </header>
+
+     <h1 id="titolo">Registrazione Scout</h1>
+
+     <section>
+        <form name="registrazione" method="post" action="stampa.php" >
+                <label for="fname">Nome:</label><br>
+                <input type="text" id="fname" name="fname" value=""><br><br>
+
+                <label for="lname">Cognome:</label><br>
+                <input type="text" id="lname" name="lname" value=""><br><br>
+
+                <label for="uname">UserName:</label><br>
+                <input type="text" id="uname" name="uname" value=""><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" id="mail" name="mail" value=""><br><br>
+
+                <label for="residenza">Città di residenza:</label><br>
+
+                <select id="residenza" name="residenza">
+                    <option value="Ancona">Ancona</option>
+                    <option value="Jesi">Jesi</option>
+                    <option value="Fabriano">Fabriano</option>
+                    <option value="Senigallia">Senigallia</option>
+                </select><br><br>
+
+                <label>Genere:</label><br>
+                <input type="radio" id="maschile" name="genere" value="Maschio">
+                <label for="maschile">Maschio</label><br>
+                <input type="radio" id="femminile" name="genere" value="Femmina">
+                <label for="femminile">Femmina</label><br><br>
+                
+                <label for="dataNascita">Data di nascita:</label><br>
+                <input type="date" id="dataNascita" name="dataNascita"><br><br>
+
+                <input type="submit" value="Invio"><br><br>
+
+              </form>
+
+              <p id="dati"> </p>
+     </section>
+
+
+    <footer>
+        <p>
+           Indirizzo 
+           Via Raffaello Sanzio, 8
+           60035  -  JESI (AN)
+        </p>
+    </footer>
+<script src ="script.js"></script>
+</body>
+</html>

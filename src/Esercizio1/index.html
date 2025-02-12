@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- head è la parte non visibile-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. Titolo scheda:  Classe 5CM informatica -->    
+    <title>Classe 5CM informatica</title>
+    <!-- 2. Generare la favicon della scuola ed inserirla nella scheda -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.svg">
+    
+    <!-- CSS impostazioni per la tabella Foglio di stile incorporato --> 
+    <link rel="stylesheet" href="foglioStile.css">
+
+
+    <style type="text/css">
+        table, th, td {
+            padding: 1em;
+            width: fit-content;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        #titolo 
+        {
+            text-align: center;
+            text-decoration-line: overline underline;
+            text-decoration-color:blue;
+        }
+
+        .smot 
+        {
+         background-color: gold;
+        }
+
+        .ser
+        {
+            background-color: cornflowerblue;
+        }
+        
+        .ing
+        {
+            background-color: brown;
+        }
+
+        .inf
+        {
+            background-color: aqua;
+        }
+
+        .itst
+        {
+            background-color:darkseagreen ;
+        }
+
+        .tp
+        {
+            background-color: chartreuse;
+        }
+
+        .gpoi
+        {
+            background-color: coral;
+        }
+
+        .ia
+        {
+            background-color: pink;
+        }
+
+        .mat
+        {
+            background-color:skyblue;
+        }
+
+        .chiesa
+        {
+            background-color: springgreen;
+        }
+
+        img { 
+            width: 77%;
+            height: 77%;
+        }
+
+    </style>
+</head>
+
+<!-- Realizzare una pagina HTML con le seguenti specifiche
+
+1. Titolo scheda:  Classe 5CM informatica
+2. Generare la favicon della scuola ed inserirla nella scheda: https://realfavicongenerator.net/
+3. Titolo pagina: Pagina della classe 5CM
+4. Elenco numerato: elenco dei laboratori di indirizzo (materie di indirizzo) 
+5. Elenco puntato: elenco delle materie curriculari
+6. Tabella: quadro orario come da immagine
+7. Link: link del sito della scuola, che si deve aprire in un'altra finestra
+8. Immagine: immagine della scuola
+
+-->
+<body>
+   <header style = "background-color: blue;">
+      <h1>IIS MARCONI PIERALISI</h1>
+      <nav>
+<!-- 5. Elenco puntato: elenco delle materie curriculari -->
+<ul>
+   <li><a href="">Informatica</a></li>
+   <li><a href="">Sistemi e rete</a></li>
+   <li><a href="">Tpsit</a></li>
+   <li><a href="">Italiano</a></li>
+   <li><a href="">Matematica</a></li>
+   <li><a href="">Inglese</a></li>
+   <li><a href="">Scienze Motorie</a></li>
+   <li><a href="">Storia</a></li>
+   <li><a href="">GPOI</a></li>
+   <li><a href="">Religione</a></li>
+   <li><a href="progettoAnno.html">Progetto dell'anno</a></li>
+ </ul>
+
+      </nav>
+    </header>
+
+    <!-- 3. Titolo pagina (pagina): Pagina della classe 5CM -->
+    <h1 id="titolo">Pagina della classe 5CM</h1>
+
+    <Section>
+      <!-- 4. Elenco numerato: elenco dei laboratori di indirizzo (materie di indirizzo) -->
+      <ol>
+         <li>Laboratorio di Informatica 2-21</li>
+         <li>Laboratorio di Sistemi 2-20</li>
+         <li>Laboratorio di Tpsit 2-19</li>
+      </ol> 
+    </Section>
+    
+
+     
+      <!-- 6. Tabella: quadro orario come da immagine -->
+       <table>
+            <caption>Orario Settimanale</caption>
+            <!-- Riga intestazione -->
+            <tr>
+                <th>Ora</th>
+                <th>Lunedì</th>
+                <th>Martedì</th>
+                <th>Mercoledì</th>
+                <th>Giovedì</th>
+                <th>Venerdì</th>
+                <th>Sabato</th>
+            </tr>
+            <!-- righe tabella -->
+             <tr>
+                <td>1a</td>
+                <td class= "smot" rowspan="2">Scienze Motorie</td>
+                <td class="inf" rowspan="2">Informatica</td>
+                <td class="inf" rowspan="2">Informatica</td>
+                <td class="tp" rowspan="2">Tpsit</td>
+                <td class="mat"> Matematica</td>
+                <td class="itst" rowspan="2">Italiano e storia</td>
+             </tr>
+
+             <tr>
+                <td>2a</td>
+                <td class="inf">Informatica</td>
+             </tr>
+
+             <tr>
+                <td>3a</td>
+                <td class="ser"rowspan="2">Sistemi e reti</td>
+                <td>Potenziamento</td>
+                <td class="tp">Tpsit</td>
+                <td class="itst" rowspan="2">Italiano e storia</td>
+                <td class="ser" >Sistemi e reti</td>
+                <td class="gpoi">GPOI</td>
+             </tr>
+
+             <tr>
+                <td>4a</td>
+                <td class="inf">Informatica</td>
+                <td class= "gpoi" rowspan="2">GPOI</td>
+                <td class="ing">Inglese</td>
+                <td class="mat">Matematica</td>
+             </tr>
+
+             <tr>
+                <td>5a</td>
+                <td class="ing" rowspan="2">Inglese</td>
+                <td class="itst">Italiano e storia</td>
+                <td class="mat">Matematica</td>
+                <td class="chiesa">Religione</td>
+                <td class="itst">Italiano e storia</td>
+             </tr>
+
+             
+             <tr>
+                <td>6a</td>
+                <td></td>
+                <td class="ia">Intelligenza Artificiale</td>
+                <td></td>
+                <td class="itst">Italiano e storia</td>
+                <td></td>
+             </tr>
+       </table>
+
+       <br>
+       <!-- 7. Link: link del sito della scuola, che si deve aprire in un'altra finestra -->
+
+       <a href="http://www.iismarconipieralisi.it"  rel="noopener noreferrer" target="_blank">Link al sito del IIS Marconi Pieralisi</a>
+       <br>
+
+       <!-- 8. Immagine: immagine della scuola, con il collegamento al sito della scuola -->
+       <a href="http://www.iismarconipieralisi.it" target="_blank" rel="noopener noreferrer"><img src="img/iisMarconiPieralisi.jpeg" alt="Iis Marconi Pieralisi">  </a>
+
+       <footer>
+         <p>
+            Indirizzo 
+            Via Raffaello Sanzio, 8
+            60035  -  JESI (AN)
+         </p>
+       </footer>
+</body>
+</html>
