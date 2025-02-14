@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 900px;
+}
+
+.column {
+    width: 100%;
+    word-wrap: break-word; /* Evita che il testo esca dalla colonna */
+    overflow-wrap: break-word;
+    padding: 10px;
+}
+
+.column div {
+    margin-bottom: 15px;
+    white-space: normal; /* Consente il ritorno a capo */
+    overflow: hidden; /* Opzionale, ma rimuove eventuali overflow visivi */
+}
+
+.column {
+    display: flex;
+    flex-direction: column; /* Allinea i contenuti nella stessa riga */
+    justify-content: space-between; /* Distanza tra i due link */
+}

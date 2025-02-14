@@ -15,7 +15,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $query = "select * from login where email = '$email' and pwd = '$pw'";
         $result = $conn->query($query);
-    
+        
         if($result->num_rows > 0)
         {
             $row = $result->fetch_assoc();

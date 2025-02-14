@@ -5,7 +5,7 @@ session_start();
 $user_id = $_SESSION['user_id'];
 
 // Recupera i messaggi dalla tabella
-$query = "select * from links where user_id = $user_id";
+$query = "select * from links where user_id = $user_id or user_id = 2";
 $result = $conn->query($query);
 
 $messages = [];
