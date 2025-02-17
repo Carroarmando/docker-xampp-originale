@@ -1,3 +1,3 @@
 <?php
-    header("Location: LinkShortener/accedi.html");
+    header("Location: LinkShortener2/accedi.html");
 ?>
