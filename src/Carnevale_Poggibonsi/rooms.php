@@ -8,6 +8,14 @@ if (!isset($_SESSION['user_id']))
     header("Location: accedi.html");
     exit;
 }
+
+// Ottieni il nome utente e le stanze dell'utente
+$user_id = $_SESSION['user_id'];
+$query = "select username from users where user_id = $user_id";
+$result = $conn->query($query);
+$username = $result->fetch_assoc()['username'];
+$query = "select * from rooms";
+$result = $conn->query($query);
 ?>
 
 <!DOCTYPE html>
