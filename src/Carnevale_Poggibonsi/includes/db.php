@@ -1,7 +1,7 @@
 <?php
 
 $host = 'db';
-$dbname = 'ChatRoom';
+$dbname = 'Carnevale_Poggibonsi';
 $user = 'user';
 $password = 'user';
 $port = 3306;

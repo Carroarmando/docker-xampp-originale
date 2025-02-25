@@ -2,17 +2,17 @@
 include("includes/db.php");
 session_start();
 
-$query = "select * from rooms";
+$query = "select name, count(*) as count, mask_id as count from users natural join masks group by name";
 $result = $conn->query($query);
 
-$rooms = [];
+$masks = [];
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $rooms[] = $row;
+        $masks[] = $row;
     }
 }
 
 header('Content-Type: application/json');
-echo json_encode($rooms);
+echo json_encode($masks);
 ?>
