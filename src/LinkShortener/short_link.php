@@ -1,24 +1,23 @@
 <?php
-include("includes/db.php");
-session_start();
+    include("includes/db.php");
+    session_start();
 
-if (!isset($_SESSION['user_id'])) 
-{
-    header("Location: accedi.html");
-    exit;
-}
+    if (!isset($_SESSION['user_id'])) 
+    {
+        header("Location: accedi.html");
+        exit;
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-    $user_id = $_SESSION["user_id"];
-    $link = $_POST["link"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
+        $user_id = $_SESSION["user_id"];
+        $link = $_POST["link"];
 
-    $hash = md5($link);
-    $shorted_link = "https://3000-idx-docker-xampp-1736234929524.cluster-6yqpn75caneccvva7hjo4uejgk.cloudworkstations.dev/LinkShortener/links/" . $hash . ".php";
-    
-    $file = $hash . ".php"; // Nome del file da creare
-    $content = 
-   "<?php
+        $hash = md5($link);
+        $shorted_link = "https://3000-idx-docker-xampp-1736234929524.cluster-6yqpn75caneccvva7hjo4uejgk.cloudworkstations.dev/LinkShortener/links/" . $hash;
+        
+        $content = 
+"<?php
     include('../includes/db.php');
     session_start();
 
@@ -28,15 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     header(\"Location: $link\");
     exit;
 ?>"; // Contenuto da scrivere nel file
-    
-    file_put_contents("links/" . $file, $content);
+        
+        file_put_contents("links/$hash", $content);
 
-    $query = "insert into links (original_link, shorted_link, user_id) values ('$link', '$shorted_link', $user_id)";
-    
-    if($conn->query($query))
-        echo "success";
-    else
-        echo "error";
-} 
+        $query = "insert into links (original_link, shorted_link, user_id) values ('$link', '$shorted_link', $user_id)";
+        
+        if($conn->query($query))
+            echo "success";
+        else
+            echo "error";
+    } 
 
 ?>
