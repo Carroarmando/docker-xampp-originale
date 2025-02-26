@@ -23,25 +23,24 @@ if (!isset($_SESSION['user_id']))
     <ul id="masks"></ul>
 
     <script>
-        function get_masks() 
-        {
+        function get_masks() {
             fetch("get_masks.php")
-            .then(response => response.json())
-            .then(data =>   
-            {
-                const masks = document.getElementById("masks");
-                masks.innerHTML = "";
-                
-                data.forEach(mask => 
-                {
-                    const li = document.createElement("li");
-                    li.innerHTML = `<a href="set_mask.php?mask_id=${mask.mask_id}">${mask.name}:</a> ${mask.count}`;
-                    masks.appendChild(li);
-                });
-            })
-            .catch(err => console.error("Errore:", err));
+                .then(response => response.json())
+                .then(data => {
+                    const masks = document.getElementById("masks");
+                    masks.innerHTML = "";
+
+                    data.forEach(mask => {
+                        const li = document.createElement("li");
+                        // Controlla se è la maschera scelta dall'utente
+                        const selectedText = mask.is_selected ? " (tu)" : "";
+                        li.innerHTML = `<a href="set_mask.php?mask_id=${mask.mask_id}">${mask.name}:</a> ${mask.count} ${selectedText}`;
+                        masks.appendChild(li);
+                    });
+                })
+                .catch(err => console.error("Errore:", err));
         }
-        
+
         setInterval(get_masks, 500);
         get_masks();
     </script>
