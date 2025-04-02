@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+    <button id="load_data" style="margin-right: 10px;">Carica dati</button>
+    
+    <button id="submit" type="submit">Esegui query</button>
+    <input id="query" type="text" name="query" placeholder="query" required style="width: 300px;">
+    
+    <table id="table" border="1">
+    </table>
+    
+    <script>
+        const button = document.getElementById("submit");
+
+        button.addEventListener("click", function(event) {  // Cambia "submit" in "click"
+            console.log("query");
+            event.preventDefault();
+
+            const formData = new FormData();
+            const query = document.getElementById("query").value;  // Aggiungi "document" prima di getElementById
+            formData.append("query", query);
+
+            fetch("api/esegui_query.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.length > 0) {  // Controlla direttamente la lunghezza dell'array (presumibilmente `data` è già un array)
+                    const table = document.getElementById('table');
+                    table.innerHTML = '';
+
+                    const thead = document.createElement('thead');
+                    const tr = document.createElement('tr');
+
+                    const keys = Object.keys(data[0]);
+                    keys.forEach(key => {
+                        const th = document.createElement('th');  // Usa <th> per l'intestazione della tabella
+                        th.textContent = key;
+                        tr.appendChild(th);
+                    });
+
+                    thead.appendChild(tr);
+                    table.appendChild(thead);
+
+                    const tbody = document.createElement('tbody');
+                    data.forEach(element => {  // Usa "data" direttamente, senza ".array"
+                        const row = document.createElement('tr');
+
+                        keys.forEach(key => {
+                            const td = document.createElement('td');
+                            td.textContent = element[key];
+                            row.appendChild(td);
+                        });
+
+                        tbody.appendChild(row);
+                    });
+                    table.appendChild(tbody);
+                }
+            })
+            .catch(err => console.error("Errore:", err));
+        });
+    </script>
+
+    <script src="view.js"></script>
+
+    <form id="insert" method="post" action="api/insert.php">
+        <input id="nome" type="text" name="nome" placeholder="nome" required>
+        <input id="cognome" type="text" name="cognome" placeholder="cognome" required>
+        <input id="email" type="text" name="email" placeholder="email" required>
+        <button type="submit">Invia</button>
+    </form>
+    
+    <script>
+        const form = document.getElementById("insert");
+
+        form.addEventListener("submit", function(event) 
+        {
+            event.preventDefault();
+
+            fetch("api/insert.php", {
+                                        method: "POST",
+                                        body: new FormData(form),
+                                      })
+            .then(response => response.text())
+            .then(data =>   {
+                                console.log(data);
+                                document.getElementById("nome").value = "";
+                                document.getElementById("cognome").value = "";
+                                document.getElementById("email").value = "";
+                            })
+            .catch(err => console.error("Errore:", err));
+        });
+    </script>
+
+</html>
