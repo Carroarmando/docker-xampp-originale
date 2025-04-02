@@ -30,12 +30,15 @@ if (!isset($_SESSION['user_id']))
     <script>
         let previousData = null; // Variabile per salvare i dati precedenti
 
-        function aggiornaLink() {
+        function aggiornaLink() 
+        {
             fetch("get_links.php")
                 .then(response => response.json())
-                .then(data => {
+                .then(data => 
+                {
                     // Se i dati sono uguali a quelli precedenti, non fare nulla
-                    if (JSON.stringify(data) === JSON.stringify(previousData)) {
+                    if (JSON.stringify(data) === JSON.stringify(previousData)) 
+                    {
                         return;
                     }
 
@@ -49,7 +52,8 @@ if (!isset($_SESSION['user_id']))
                     const shorted_links = document.getElementById("shorted_links");
                     shorted_links.innerHTML = "";
 
-                    data.forEach(link => {
+                    data.forEach(link => 
+                    {
                         const original_link_Div = document.createElement("div");
                         original_link_Div.textContent = link.original_link;
                         original_links.appendChild(original_link_Div);
