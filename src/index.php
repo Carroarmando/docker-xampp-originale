@@ -1,3 +1,3 @@
 <?php
-    header("Location: test/view/view.html");
+    header("Location: view/view.html");
 ?>
