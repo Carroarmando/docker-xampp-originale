@@ -46,6 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo "Errore nell'upload: " . $_FILES['fileDaCaricare']['error'];
     }
 }
-if (true){
-    
-}
+?>
