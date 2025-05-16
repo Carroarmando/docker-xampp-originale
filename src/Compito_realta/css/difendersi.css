@@ -1,0 +1,108 @@
+/* RESET BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Allarga il main per più spazio orizzontale */
+main {
+    padding: 50px 20px;
+    max-width: 1200px;  /* precedentemente 900px */
+    margin: auto;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* container flex per immagine e testo */
+.flex-wrapper {
+    display: flex;
+    align-items: flex-start; /* allinea immagine e testo in alto */
+    gap: 20px;               /* spazio tra immagine e testo */
+    margin: 40px 0;          /* un po’ di respiro sopra/sotto */
+    width: 100%;             /* sfrutta tutta la larghezza del main */
+}
+
+/* dimensioni e comportamento dell’immagine */
+.immagine {
+    flex: 0 0 180px; /* larghezza fissa ridotta (prima 250px) */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* contenitore del testo, occupa il resto dello spazio */
+.text-block {
+    flex: 1;
+}
+
+/* Responsivo: su schermi piccoli, impila verticalmente */
+@media (max-width: 600px) {
+    .flex-wrapper {
+        flex-direction: column;
+    }
+    .immagine {
+        margin-bottom: 15px;
+        flex: none;
+        width: 100%;
+    }
+}
+.immagine {
+    width: 400px;
+    height: auto;
+  }
+  .float-left {
+    float: left;               /* fa “galleggiare” l’immagine a sinistra */
+    margin: 0 20px 20px 0;     /* spazio a destra e sotto */
+  }
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

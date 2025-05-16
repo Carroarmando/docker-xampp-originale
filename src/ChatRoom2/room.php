@@ -24,22 +24,28 @@ $room_name = $_SESSION['room_name'];
     <div id="chat"></div>
 
     <script>
+        let old_data = "";
         function aggiornaChat() 
         {
             fetch("get_messages.php")
             .then(response => response.json())
             .then(data =>   
             {
-                const chat = document.getElementById("chat");
-                chat.innerHTML = ""; // Svuota la chat
-
-                // Aggiungi ogni messaggio
-                data.forEach(msg => 
+                if (JSON.stringify(old_data) != JSON.stringify(data))
                 {
-                    const msgDiv = document.createElement("div");
-                    msgDiv.innerHTML = `<strong>${msg.username}</strong>: ${msg.message} <small>(${msg.time})</small>`;
-                    chat.appendChild(msgDiv);
-                });
+                    old_data = data;
+
+                    const chat = document.getElementById("chat");
+                    chat.innerHTML = ""; // Svuota la chat
+
+                    // Aggiungi ogni messaggio
+                    data.forEach(msg => 
+                    {
+                        const msgDiv = document.createElement("div");
+                        msgDiv.innerHTML = `<strong>${msg.username}</strong>: ${msg.message} <small>(${msg.time})</small>`;
+                        chat.appendChild(msgDiv);
+                    });
+                }
             })
             .catch(err => console.error("Errore:", err));
         }

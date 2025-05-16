@@ -199,7 +199,7 @@
           bike: "Andare in bici",
           basket: "Basket",
           anime: "Anime e manga",
-          skills: "Hard skills",
+          skills: "Problem solving, lavoro in team, adattabilità.",
           pctotitle: "PCTO presso APRA (Jesi)",
           proj3title: "Terzo anno",
           proj4title: "Quarto anno",
@@ -231,7 +231,7 @@
           bike: "Cycling",
           basket: "Basketball",
           anime: "Anime and manga",
-          skills: "Hard skills",
+          skills: "Problem solving, team working, adaptability.", //da tradurre
           pctotitle: "Internship at APRA (Jesi)",
           proj3title: "Third year",
           proj4title: "Fourth year",

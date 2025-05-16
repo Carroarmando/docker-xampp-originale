@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html lang="it">
-    <div id="container"></div>
+<?php
 
+if (isset($a))
+    $a += 1;
+else
+    $a = 1;
 
-    <script>
-        let previousData = null; // Variabile per salvare i dati precedenti
+echo $a;
 
-        function aggiornaLink() 
-        {
-            fetch("../api/data.php")
-                .then(response => response.json())
-                .then(data => 
-                {
-                    // Se i dati sono uguali a quelli precedenti, non fare nulla
-                    if (JSON.stringify(data) === JSON.stringify(previousData))
-                        return;
+if($a < 50)
+    require "fetch.php";
 
-                    // Salva i nuovi dati
-                    previousData = data;
-
-                    const div = document.getElementById('container');
-                    div.innerHTML = "";
-                    data.forEach(dato => 
-                    {
-                        const innerDiv = document.createElement("div");
-                        innerDiv.innerHTML = dato.nome + " " + dato.cognome + " " + dato.email;
-                        div.appendChild(innerDiv);
-                    })
-                })
-                .catch(err => console.error("Errore:", err));
-        }
-
-        setInterval(aggiornaLink, 500);
-        aggiornaLink();
-    </script>
-</html>
+?>

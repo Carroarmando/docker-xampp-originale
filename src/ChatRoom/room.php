@@ -75,17 +75,24 @@ $invite_link = "https://3000-idx-docker-xampp-1736234929524.cluster-6yqpn75canec
         {
             fetch("get_messages.php")
             .then(response => response.json())
-            .then(data =>   {
-                                const chat = document.getElementById("chat");
-                                chat.innerHTML = ""; // Svuota la chat
+            .then(data =>   
+            {
+                if (JSON.stringify(old_data) != JSON.stringify(data))
+                {
+                    old_data = data;
 
-                                // Aggiungi ogni messaggio
-                                data.forEach(msg => {
-                                                        const msgDiv = document.createElement("div");
-                                                        msgDiv.innerHTML = `<strong>${msg.username}</strong>: ${msg.message} <small>(${msg.time})</small>`;
-                                                        chat.appendChild(msgDiv);
-                                                    });
-                            })
+                    const chat = document.getElementById("chat");
+                    chat.innerHTML = ""; // Svuota la chat
+
+                    // Aggiungi ogni messaggio
+                    data.forEach(msg => 
+                    {
+                        const msgDiv = document.createElement("div");
+                        msgDiv.innerHTML = `<strong>${msg.username}</strong>: ${msg.message} <small>(${msg.time})</small>`;
+                        chat.appendChild(msgDiv);
+                    });
+                }
+            })
             .catch(err => console.error("Errore:", err));
         }
         
@@ -106,15 +113,17 @@ $invite_link = "https://3000-idx-docker-xampp-1736234929524.cluster-6yqpn75canec
         {
             event.preventDefault();
 
-            fetch("send_message.php", {
-                                        method: "POST",
-                                        body: new FormData(form),
-                                      })
+            fetch("send_message.php", 
+            {
+                method: "POST",
+                body: new FormData(form),
+            })
             .then(response => response.text())
-            .then(data =>   {
-                                console.log(data);
-                                document.getElementById("message").value = "";
-                            })
+            .then(data =>   
+            {
+                console.log(data);
+                document.getElementById("message").value = "";
+            })
             .catch(err => console.error("Errore:", err));
         });
     </script>
