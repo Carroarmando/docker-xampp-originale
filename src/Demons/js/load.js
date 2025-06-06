@@ -6,9 +6,9 @@ const demonRowBottom = document.querySelector('#player-bottom .demon-row');
 //const divCartaTop1 = creaCarta("card", "percorso immagine carta", function(carta) { funzione da eseguire al click }, "testo tooltip");         //creazione di carte e demoni
 //const divDemonTop1 = creaCarta("card demon", "percorso immagine carta", function(carta) { funzione da eseguire al click }, "testo tooltip");
 
-const candles = [["candel0", 3, 4, 5], ["candel1", 5, 6], ["candel2", 6, 8], ["candel3", 8, 9], ["candel4", 9, 10, 11]];
+const candles = [["candle0", 3, 4, 5], ["candle1", 5, 6], ["candle2", 6, 8], ["candle3", 8, 9], ["candle4", 9, 10, 11]];
 
-i = /*Math.floor(Math.random() * 5);*/ 1;
+i = Math.floor(Math.random() * 5);
 candle1 = candles[i];
 candles.splice(i, 1)
 i = Math.floor(Math.random() * 4);
