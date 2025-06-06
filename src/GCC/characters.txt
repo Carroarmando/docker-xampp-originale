@@ -1,0 +1,81 @@
+Terry A. Davis
+Il profeta di TempleOS, mistico e controverso. Meme per antonomasia nel dev-world.
+Attiva TempleOS immediatamente, questo non consuma slot OS. A inizio turno peschi uno script aggiuntivo holyC.
+
+Dennis Ritchie
+Creatore del C e co-autore di Unix. Il programmatore dei programmatori.
+A inizio turno peschi due script aggiuntivi C.
+
+Ken Thompson
+Compagno di Ritchie, creatore di Unix. Tipo silenzioso, ma ha plasmato tutto.
+Attiva una carta OS a tua scelta immediatamente, questo non consuma slot OS. una volta ogni 3 turni, puoi scegliere una carta OS avversaria e disattivarla per 2 turni.
+
+Linus Torvalds
+Creatore di Linux. Leggendario per il kernel, la lingua tagliente e il "Fck you NVIDIA".
+Attiva Linux immediatamente, questo non consuma slot OS. Una volta per turno puoi scegliere una carta script giocata dall'avversario e scartarla.
+
+Richard Stallman (RMS)
+Papà del movimento GNU, super open-source radical. Vive di GNU e gloria.
+a inizio turno scegli una carta library e renderla open-source per quel turno. Puoi scegliere uno script basato su librerie open-source e attivarlo due volte.
+
+Bjarne Stroustrup
+Creatore del C++. Se hai odiato i template, prenditela con lui.
+a inizio turno puoi scegliere una libreria avversaria e renderla tua per i prossimi 5 turni.
+
+Guido van Rossum
+Il creatore di Python. Ha reso la programmazione leggibile.
+a inizio turno puoi guardare le prime 10 carte dell mazzo e metterle nell'ordine che preferisci.
+
+Grace Hopper
+Inventrice del COBOL e pioniera del debug (letteralmente: trovò una falena nel computer).
+a inizio turno rimuove gli effetti negativi su una carta library o OS.
+
+Ada Lovelace
+Prima programmatrice della storia, nel 1800. OG totale.
+una volta ogni 2 turni puoi prendere dalla pila degli scarti una carta script e giocarla.
+
+Donald Knuth
+Autore de “The Art of Computer Programming”. Se lo capisci, sei un cyborg.
+le tue carte script hanno EXPr dimezzata.
+
+
+
+
+👨‍💻 Meme Person ma realistici o reverenziati nel tech:
+
+
+
+
+Steve Wozniak
+Il Woz. Il nerd vero dietro Apple, molto più dev di Jobs.
+una volta per turno puoi giocare una carta script ignorando la sua EXPr.
+
+Bill Gates (giovane)
+Il Bill pre-philanthropo. Hacker, imprenditore, e poi... BSOD.
+a inizio turno scegli una carta OS avversaria e disattivala per questo turno.
+
+Elon Musk (fase X.com/PHP)
+Prima di Twitter e Mars, scriveva codice per banche online.
+tutte le carte OS avversarie attive che hai attivato anche tu, si disattivano.
+
+John Carmack
+Creatore di Doom e Quake. Programmatore 3D leggendario.
+una volta per turno puoi scegliere una carta script e attivarla 3 volte.
+
+Mark Zuckerberg (giovane hoodie era)
+Versione da college, quella di “The Social Network”. PHP+JS+SQL con birra.
+puoi vedere le carte che pesca l'avversario.
+
+Kevin Mitnick
+Hacker leggendario, diventato white-hat. Icona anni ‘90.
+una volta ogni 3 turni puoi vedere le carte script avversaria e rubarne 1.
+
+Linus (di xkcd)
+Non Torvalds, ma il personaggio fittizio del webcomic xkcd, rappresentazione perfetta del programmatore sarcastico.
+
+The Real Hacker (Green Text Terminal Guy)
+Il classico nerd hoodie da film, in realtà una caricatura di dev veri. Potresti chiamarlo "Anon Programmer".
+
+StackOverflow Guy (aka Copypaste Hero)
+Rappresenta tutti noi. L'eroe che copia e incolla senza capire, ma funziona.
+

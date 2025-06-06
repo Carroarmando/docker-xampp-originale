@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['room_name']))
 $room_name = $_SESSION['room_name'];
 $room_id = $_SESSION['room_id'];
 
-$invite_link = "https://3000-idx-docker-xampp-1736234929524.cluster-6yqpn75caneccvva7hjo4uejgk.cloudworkstations.dev/ChatRoom/join.php?room_id=" . $room_id;
+$invite_link = "https://3000-idx-docker-xampp-1743590820543.cluster-23wp6v3w4jhzmwncf7crloq3kw.cloudworkstations.dev/ChatRoom/join.php?room_id=" . $room_id;
 ?>
 
 <html>

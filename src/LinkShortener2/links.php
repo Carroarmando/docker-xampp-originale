@@ -51,7 +51,7 @@ if (!isset($_SESSION['user_id']))
 
                     data.forEach(link => {
                         const original_link_Div = document.createElement("div");
-                        original_link_Div.textContent = link.original_link;
+                        original_link_Div.textContent = link.original_link + "\n asdasdasdasd";
                         original_links.appendChild(original_link_Div);
 
                         const shorted_link_Div = document.createElement("div");

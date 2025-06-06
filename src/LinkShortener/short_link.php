@@ -14,14 +14,14 @@
         $link = $_POST["link"];
 
         $hash = md5($link);
-        $shorted_link = "https://3000-idx-docker-xampp-1736234929524.cluster-6yqpn75caneccvva7hjo4uejgk.cloudworkstations.dev/LinkShortener/links/" . $hash;
+        $shorted_link = "https://3000-idx-docker-xampp-1743590820543.cluster-23wp6v3w4jhzmwncf7crloq3kw.cloudworkstations.dev/LinkShortener/links/" . $hash;
         
         $content = 
 "<?php
     include('../includes/db.php');
     session_start();
 
-    \$query = \"update links set visite = visite + 1 where original_link = '$link';\";
+    \$query = \"update links set visite = visite + 1 where original_link = '$link' and user_id = '$user_id';\";
     \$result = \$conn->query(\$query);
 
     header(\"Location: $link\");

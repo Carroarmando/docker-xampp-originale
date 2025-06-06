@@ -54,12 +54,14 @@ if (!isset($_SESSION['user_id']))
 
                     data.forEach(link => 
                     {
-                        const original_link_Div = document.createElement("div");
-                        original_link_Div.textContent = link.original_link;
+                        const original_link_Div = document.createElement("a");
+                        original_link_Div.innerHTML = link.original_link;
+                        original_link_Div.href = link.original_link;
                         original_links.appendChild(original_link_Div);
 
-                        const shorted_link_Div = document.createElement("div");
-                        shorted_link_Div.textContent = link.shorted_link;
+                        const shorted_link_Div = document.createElement("a");
+                        shorted_link_Div.innerHTML = link.shorted_link;
+                        shorted_link_Div.href = link.shorted_link;
                         shorted_links.appendChild(shorted_link_Div);
                     });
                 })
