@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="../css/demons.css">
+<?php session_start(); ?>
+
+<link rel="stylesheet" href="../css/game.css">
 <div id="game-board">
 
   <!-- Giocatore Top -->
@@ -43,5 +45,23 @@
 
 </div>
 
-<script src="../js/creaCarta.js"></script>
+<script>
+  const game_id = <?= json_encode($_SESSION['game_id']) ?>;
+  const user_id = <?= json_encode($_SESSION['user_id']) ?>;
+  const opponent_id = <?= json_encode($_SESSION["opponent_id"]) ?>;
+  
+  let i = (user_id < opponent_id) ^ (game_id % 2 === 0);
+  
+  const boughtRowTop = document.querySelector('#player-top .bought-row');
+  const boughtRowBottom = document.querySelector('#player-bottom .bought-row');
+  const demonRowTop = document.querySelector('#player-top .demon-row');
+  const demonRowBottom = document.querySelector('#player-bottom .demon-row');
+  const centerNeighborhood = document.querySelector('#center-area #neighborhood');
+</script>
+<script src="../js/mazzi.js"></script>
+<script src="../js/functions.js"></script>
+
 <script src="../js/load.js"></script>
+<script>
+  mostra_carte();
+</script>

@@ -1,24 +1,52 @@
-const boughtRowTop = document.querySelector('#player-top .bought-row');
-const boughtRowBottom = document.querySelector('#player-bottom .bought-row');
-const demonRowTop = document.querySelector('#player-top .demon-row');
-const demonRowBottom = document.querySelector('#player-bottom .demon-row');
+load = false;
 
-//const divCartaTop1 = creaCarta("card", "percorso immagine carta", function(carta) { funzione da eseguire al click }, "testo tooltip");         //creazione di carte e demoni
-//const divDemonTop1 = creaCarta("card demon", "percorso immagine carta", function(carta) { funzione da eseguire al click }, "testo tooltip");
+(async () => 
+{
+    if (!load)
+    {
+        candles = mescolaMazzo(candles, game_id);
+        neighborhood = mescolaMazzo(neighborhood, game_id);
+        demons = mescolaMazzo(demons, game_id);
+    
+        // sceglie la candela
+        const candle_id = candles[i];
+        await fetch(`../php/api/set/candle.php?candle=${candle_id}`);
+    
+        // demoni
+        await demoni(i);
+    
+        load = true;
+    }
+})();
 
-const candles = [["candle0", 3, 4, 5], ["candle1", 5, 6], ["candle2", 6, 8], ["candle3", 8, 9], ["candle4", 9, 10, 11]];
 
-i = Math.floor(Math.random() * 5);
-candle1 = candles[i];
-candles.splice(i, 1)
-i = Math.floor(Math.random() * 4);
-candle2 = candles[i];
-candles.splice(i, 1)
+async function demoni(i) 
+{
+    if (i == 0) 
+    {
+        const demons_id = await get_demon(3);
+        set_demons_offset(3);
 
-const candleTop = creaCarta("card candle", "../img/" + candle1[0] + ".png", () => console.log("Candela Top cliccata"), "Raccogli un'anima");
-candleTop.setAttribute('data-values', JSON.stringify(candle1.slice(1)));
-boughtRowTop.appendChild(candleTop);
+        demons_id.forEach(demon_id => 
+        {
+            fetch(`../php/api/set/demon.php?demon=${demon_id}&summoned=0`);
+        });
+    } 
+    else 
+    {
+        while (true)
+        {
+            if (get_demons_offset() == 3)
+                break;
+            await new Promise(r => setTimeout(r, 500)); 
+        }
 
-const candleBottom = creaCarta("card candle", "../img/" + candle2[0] + ".png", () => console.log("Candela Bottom cliccata"), "Raccogli un'anima");
-candleBottom.setAttribute('data-values', JSON.stringify(candle2.slice(1)));
-boughtRowBottom.appendChild(candleBottom);
+        const demons_id = await get_demon(3);
+        set_demons_offset(3);
+
+        demons_id.forEach(demon_id => 
+        {
+            fetch(`../php/api/set/demon.php?demon=${demon_id}&summoned=0`);
+        });
+    }
+}
